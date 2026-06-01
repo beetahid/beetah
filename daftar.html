@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendaftaran Kursus - beetah.id</title>
+    <link rel="stylesheet" href="style_daftar.css">
+</head>
+<body>
+    <div class="glass-container">
+        <div class="header">
+            <h2>Pendaftaran Kursus</h2>
+            <p>beetah.id - Akademi Bahasa & Al-Qur'an</p>
+        </div>
+
+        <form id="pendaftaranForm">
+            <div class="form-group">
+                <label for="Kategori Peserta">Kategori Peserta</label>
+                <select id="kategori" name="Kategori Peserta" required>
+                    <option value="" disabled selected>-- Pilih Kategori --</option>
+                    <option value="Anak-anak">Anak-anak</option>
+                    <option value="Dewasa">Dewasa</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="Nama Peserta">Nama Lengkap Peserta</label>
+                <input type="text" id="namaPeserta" name="Nama Peserta" placeholder="Masukkan nama lengkap" required>
+            </div>
+
+            <div class="form-group" id="groupOrtu" style="display: none;">
+                <label for="Nama Orang Tua">Nama Orang Tua</label>
+                <input type="text" id="namaOrtu" name="Nama Orang Tua" placeholder="Masukkan nama orang tua">
+            </div>
+
+            <div class="form-group">
+                <label for="Program Kursus">Program Kursus</label>
+                <select id="program" name="Program Kursus" required>
+                    <option value="" disabled selected>-- Pilih Program --</option>
+                    <option value="Tahsin">Tahsin</option>
+                    <option value="Tajwid">Tajwid</option>
+                    <option id="optCalistung" value="Calistung">Calistung</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="Bahasa Pengantar">Bahasa Pengantar</label>
+                <select id="bahasa" name="Bahasa Pengantar" required>
+                    <option value="" disabled selected>-- Pilih Bahasa --</option>
+                    <option value="Indonesia">Indonesia</option>
+                    <option value="Inggris">Inggris</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="Nomor WhatsApp">Nomor WhatsApp Aktif</label>
+                <input type="tel" id="noWA" name="Nomor WhatsApp" placeholder="Contoh: 08123456789" required>
+            </div>
+
+            <button type="submit" id="btnSubmit">Daftar Sekarang</button>
+            <div id="statusMessage" class="status-message"></div>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
