@@ -55,7 +55,7 @@ label {
     font-weight: 500;
 }
 
-input, select {
+input, select, textarea {
     width: 100%;
     padding: 12px 15px;
     border-radius: 10px;
@@ -65,13 +65,14 @@ input, select {
     font-size: 15px;
     outline: none;
     transition: all 0.3s ease;
+    resize: vertical; /* Mengizinkan kolom ditarik memanjang ke bawah */
 }
 
-input::placeholder {
+input::placeholder, textarea::placeholder {
     color: rgba(255, 255, 255, 0.6);
 }
 
-input:focus, select:focus {
+input:focus, select:focus, textarea:focus {
     background: rgba(255, 255, 255, 0.15);
     border-color: #4facfe;
     box-shadow: 0 0 10px rgba(79, 172, 254, 0.5);
@@ -113,4 +114,14 @@ button:disabled {
     margin-top: 15px;
     font-size: 14px;
     font-weight: bold;
+}
+
+/* Gaya untuk sub-keterangan di bawah label */
+.sub-keterangan {
+    display: block;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: -5px;
+    margin-bottom: 10px;
+    font-style: italic;
 }

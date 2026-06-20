@@ -43,7 +43,49 @@ body {
     border-bottom: 1px solid rgba(255, 255, 255, 0.4);
 }
 
-.logo { font-size: 1.8rem; font-weight: 700; color: var(--text-main); letter-spacing: -0.5px; }
+/* =========================================
+   PENGATURAN LOGO (HEADER)
+   ========================================= */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Jarak antara grup gambar logo dan teks tulisan */
+    text-decoration: none;
+}
+
+.logo-images {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Jarak antara logo Al Firdaus dan logo beetah.id */
+}
+
+/* Pengaturan Gambar Logo Bulat */
+.circle-logo {
+    width: 45px; /* Lebar logo - silakan sesuaikan jika kurang besar/kecil */
+    height: 45px; /* Tinggi logo - pastikan sama dengan lebar agar bulat sempurna */
+    border-radius: 50%; /* Membuat gambar menjadi bulat */
+    object-fit: cover; /* Memastikan gambar tidak gepeng */
+    background-color: var(--clay-bg); /* Latar belakang berjaga-jaga jika logo transparan */
+    
+    /* Sentuhan efek Claymorphism tipis pada logo */
+    box-shadow: 
+        3px 3px 8px var(--clay-shadow-dark), 
+        -3px -3px 8px var(--clay-shadow-light);
+    border: 2px solid var(--primary-color); /* Opsional: Garis tepi warna utama agar lebih tegas */
+}
+
+/* Pengaturan Teks Logo */
+.logo-text {
+    font-size: 1rem;
+    font-weight: 1000;
+    color: var(--text-main);
+    letter-spacing: -0.5px;
+}
+
+.logo-text span {
+    color: var(--primary-color);
+}
+/* .logo { font-size: 1.8rem; font-weight: 700; color: var(--text-main); letter-spacing: -0.5px; } */
 .logo span { color: var(--primary-color); }
 .nav-links { list-style: none; display: flex; gap: 2rem; }
 .nav-links a { text-decoration: none; color: var(--text-main); font-weight: 500; transition: color 0.3s ease; }
@@ -81,8 +123,8 @@ body {
     width: 100%;
 }
 .hero-text { flex: 2; }
-.hero-text h1 { font-size: 3.2rem; color: var(--text-main); line-height: 1.2; margin-bottom: 1.5rem; }
-.hero-text p { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 2.5rem; max-width: 90%; }
+.hero-text h1 { font-size: 2.2rem; color: var(--text-main); line-height: 1.2; margin-bottom: 1.5rem; }
+.hero-text p { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 0.5rem; max-width: 90%; text-align: justify;}
 .hero-btn { font-size: 1.1rem; padding: 1rem 2.5rem; }
 .hero-image { flex: 1; display: flex; justify-content: flex-end; }
 .image-placeholder {
@@ -102,6 +144,44 @@ body {
     box-shadow: inset 10px 10px 20px var(--clay-shadow-dark), inset -10px -10px 20px var(--clay-shadow-light);
 }
 
+/* =========================================
+   PROFIL SECTION
+   ========================================= */
+.profil-section {
+    padding: 5rem 5% 0; /* Padding bawah 0 agar jarak ke section berikutnya pas */
+    text-align: center;
+    clear: both;
+    display: block;
+    width: 100%;
+}
+
+.profil-container {
+    max-width: 800px; /* Membatasi lebar teks agar lebih nyaman dibaca */
+    margin: 0 auto; /* Membuat kotak profil otomatis berada di tengah layar */
+    padding: 3rem 2rem;
+}
+
+.profil-container h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-main);
+}
+
+.profil-container h2 span {
+    color: var(--primary-color);
+}
+
+.profil-container p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+#keunggulan h2 span {
+    color: var(--primary-color);
+}
 /* =========================================
    MENGAPA MEMILIH KAMI (FITUR)
    ========================================= */
@@ -162,6 +242,96 @@ body {
 .glass-btn { font-size: 0.95rem; padding: 0.8rem 1.5rem; }
 
 /* =========================================
+   GAMBAR THUMBNAIL MENUJU GALERI (HERO SECTION)
+   ========================================= */
+.hero-gallery-link {
+    display: inline-block;
+    margin-bottom: 1rem; /* Jarak antara gambar dan tombol Daftar */
+    text-decoration: none;
+    width: 100%;
+    max-width: 650px; /* Membatasi ukuran gambar agar tidak terlalu besar di Hero */
+}
+
+.hero-gallery-thumbnail {
+    background-color: var(--clay-bg);
+    padding: 1rem;
+    border-radius: 20px;
+    text-align: center;
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 0.9rem;
+    /* Efek Claymorphism luar */
+    box-shadow: 
+        7px 7px 15px var(--clay-shadow-dark), 
+        -7px -7px 15px var(--clay-shadow-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-gallery-thumbnail:hover {
+    transform: translateY(-5px); /* Melayang saat disorot */
+    box-shadow: 
+        10px 10px 20px var(--clay-shadow-dark), 
+        -10px -10px 20px var(--clay-shadow-light);
+}
+
+/* Jika Anda memasukkan tag <img> di dalam hero-gallery-thumbnail, ini CSS-nya: */
+.hero-gallery-thumbnail img {
+    width: 100%;
+    border-radius: 1px;
+    display: block;
+}
+
+/* =========================================
+   GALERI SECTION
+   ========================================= */
+.gallery-section {
+    padding: 5rem 5%;
+    text-align: center;
+    clear: both;
+    display: block;
+    width: 100%;
+}
+
+.gallery-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 3rem;
+    color: var(--text-main);
+}
+
+.gallery-section h2 span {
+    color: var(--primary-color);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.gallery-item {
+    padding: 1rem; /* Memberikan efek bingkai di sekitar gambar */
+}
+
+/* Area Cekung Tempat Gambar Utama Galeri */
+.gallery-img-placeholder {
+    width: 100%;
+    aspect-ratio: 4 / 3; /* Format landscape standar */
+    background: var(--clay-bg);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-style: italic;
+    /* Efek Cekung (Inner Shadow) */
+    box-shadow: 
+        inset 5px 5px 10px var(--clay-shadow-dark), 
+        inset -5px -5px 10px var(--clay-shadow-light);
+}
+
+/* =========================================
    FOOTER
    ========================================= */
 .footer {
@@ -195,7 +365,76 @@ body {
     .feature-grid, .program-grid { gap: 1.5rem; }
 }
 
+/* =========================================
+   FLOATING WHATSAPP BUTTON (CLAYMORPHISM)
+   ========================================= */
+.floating-wa {
+    position: fixed;
+    bottom: 30px; /* Jarak dari bawah layar */
+    right: 30px;  /* Jarak dari kanan layar */
+    width: 65px;
+    height: 65px;
+    background-color: #25D366; /* Warna hijau khas WhatsApp */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Memastikan tombol selalu berada paling atas menutupi elemen lain */
+    text-decoration: none;
+    
+    /* Efek Claymorphism */
+    box-shadow: 
+        4px 4px 10px rgba(0, 0, 0, 0.2), 
+        -4px -4px 10px rgba(255, 255, 255, 0.4),
+        inset 2px 2px 5px rgba(255, 255, 255, 0.4),
+        inset -2px -2px 5px rgba(0, 0, 0, 0.1);
+    
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: pulse-wa 2s infinite; /* Memanggil animasi denyut */
+}
 
+/* Efek saat kursor diarahkan ke tombol */
+.floating-wa:hover {
+    transform: translateY(-5px) scale(1.05); /* Sedikit membesar dan melayang */
+    box-shadow: 
+        6px 6px 15px rgba(0, 0, 0, 0.3), 
+        -6px -6px 15px rgba(255, 255, 255, 0.5);
+    animation: none; /* Matikan animasi denyut saat di-hover */
+}
+
+/* Pengaturan Ikon Gambar di dalam tombol */
+.wa-icon {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+}
+
+/* Animasi Denyut (Pulse) agar tombol menarik perhatian */
+@keyframes pulse-wa {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
+
+/* Penyesuaian untuk layar HP agar tidak terlalu memakan tempat */
+@media (max-width: 768px) {
+    .floating-wa {
+        bottom: 20px;
+        right: 20px;
+        width: 55px;
+        height: 55px;
+    }
+    .wa-icon {
+        width: 30px;
+        height: 30px;
+    }
+}
 
 
 

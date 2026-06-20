@@ -9,8 +9,9 @@
 <body>
     <div class="glass-container">
         <div class="header">
-            <h2>Pendaftaran Kursus</h2>
-            <p>beetah.id - Akademi Bahasa & Al-Qur'an</p>
+            <h2>Form Pendaftaran Bimbel</h2>
+            <h3>Rumah Belajar Al-Firdaus (@beetah.id)</h3>
+            <p>Bimbingan Akademik dan Mengaji</p>
         </div>
 
         <form id="pendaftaranForm">
@@ -18,7 +19,7 @@
                 <label for="Kategori Peserta">Kategori Peserta</label>
                 <select id="kategori" name="Kategori Peserta" required>
                     <option value="" disabled selected>-- Pilih Kategori --</option>
-                    <option value="Anak-anak">Anak-anak</option>
+                    <option value="Anak-anak">Anak-Anak</option>
                     <option value="Dewasa">Dewasa</option>
                 </select>
             </div>
@@ -28,18 +29,72 @@
                 <input type="text" id="namaPeserta" name="Nama Peserta" placeholder="Masukkan nama lengkap" required>
             </div>
 
+            <div class="form-group">
+                <label for="Umur">Umur (Tahun)</label>
+                <input type="number" id="umur" name="Umur" placeholder="Contoh: 10" required>
+            </div>
+
+            <div class="form-group">
+                <label for="Gender">Gender</label>
+                <select id="gender" name="Gender" required>
+                    <option value="" disabled selected>-- Pilih Gender --</option>
+                    <option value="Ikhwan (Laki-laki)">Laki-laki</option>
+                    <option value="Akhwat (Perempuan)">Perempuan</option>
+                </select>
+            </div>
+
             <div class="form-group" id="groupOrtu" style="display: none;">
                 <label for="Nama Orang Tua">Nama Orang Tua</label>
                 <input type="text" id="namaOrtu" name="Nama Orang Tua" placeholder="Masukkan nama orang tua">
             </div>
 
             <div class="form-group">
-                <label for="Program Kursus">Program Kursus</label>
+                <label for="Program Kursus">Program Bimbel</label>
                 <select id="program" name="Program Kursus" required>
                     <option value="" disabled selected>-- Pilih Program --</option>
-                    <option value="Tahsin">Tahsin</option>
-                    <option value="Tajwid">Tajwid</option>
                     <option id="optCalistung" value="Calistung">Calistung</option>
+                    <option id="optBimbelSD" value="Bimbingan Akademik Pelajaran Sekolah">Bimbingan Akademik Pelajaran Sekolah</option>
+                    <option value="Iqra">Iqra</option>
+                    <option value="Tajwid">Tajwid</option>
+                    <option value="Tahsin">Tahsin</option>
+                    <option id="optTahfidz" value="Tahfidz">Tahfidz</option>
+                </select>
+            </div>
+
+            <div class="form-group" id="groupAkademikSD" style="display: none;">
+                <label for="Grade (Kelas)">Grade (Kelas)</label>
+                <select id="grade" name="Grade (Kelas)">
+                    <option value="" disabled selected>-- Pilih Kelas --</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="Jenis Kelas">Jenis Kelas</label>
+                <select id="jenisKelas" name="Jenis Kelas" required>
+                    <option value="" disabled selected>-- Pilih Jenis Kelas --</option>
+                    <option value="Group">Group (3 - 5 Orang)</option>
+                    <option value="Privat">Private</option>
+                </select>
+            </div>
+
+            <div class="form-group" id="groupSekolah" style="display: none;">
+                <label for="Nama Sekolah">Nama Sekolah</label>
+                <span class="sub-keterangan">*nama sekolah diperlukan agar memudahkan dalam pengelompokan dan pembelajaran dengan kurikulum yang sama</span>
+                <input type="text" id="sekolah" name="Nama Sekolah" placeholder="Masukkan nama sekolah">
+            </div>
+
+            <!-- LOKASI BELAJAR (Opsi akan diisi otomatis oleh JavaScript) -->
+            <div class="form-group" id="groupLokasi" style="display: none;">
+                <label for="Lokasi Belajar">Lokasi Belajar</label>
+                <select id="lokasiBelajar" name="Lokasi Belajar">
+                    <option value="" disabled selected>-- Pilih Lokasi --</option>
+                    <!-- Opsi lainnya dihapus dari sini -->
                 </select>
             </div>
 
@@ -49,7 +104,26 @@
                     <option value="" disabled selected>-- Pilih Bahasa --</option>
                     <option value="Indonesia">Indonesia</option>
                     <option value="Inggris">Inggris</option>
+                    <option value="Bilingual (Indonesia & Inggris)">Bilingual (Indonesia & Inggris)</option>
                 </select>
+            </div>
+            <!-- PREFERENSI JAM BELAJAR (BARU) -->
+            <div class="form-group">
+                <label for="Preferensi Jam Belajar">Preferensi Jam Belajar</label>
+                <span class="sub-keterangan">*waktu akan disesuaikan dengan durasi kelas dan kesepakatan siswa dan guru</span>
+                <select id="jamBelajar" name="Preferensi Jam Belajar" required>
+                    <option value="" disabled selected>-- Pilih Waktu Belajar --</option>
+                    <option value="Pagi (Antara Jam 08.00 WIB - 11.30 WIB)">Pagi (Antara Jam 08.00 WIB - 11.30 WIB)</option>
+                    <option value="Siang (Antara Jam 13.00 WIB - 15.00 WIB)">Siang (Antara Jam 13.00 WIB - 15.00 WIB)</option>
+                    <option value="Sore (Antara Jam 15.30 WIB - 17.30 WIB)">Sore (Antara Jam 15.30 WIB - 17.30 WIB)</option>
+                    <option value="Malam (Antara Jam 19.30 WIB - 21.00 WIB)">Malam (Antara Jam 19.30 WIB - 21.00 WIB)</option>
+                    <option value="Fleksibel">Fleksibel</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="Detail Tambahan">Detail Tambahan (Gambaran Kebutuhan Kelas)</label>
+                <textarea id="detailTambahan" name="Detail Tambahan" rows="4" placeholder="Tuliskan harapan / gambaran kelas, target belajar, atau kebutuhan siswa..."></textarea>
             </div>
 
             <div class="form-group">
