@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pendaftaran Kursus - beetah.id</title>
     <link rel="stylesheet" href="style_daftar.css">
+    <!-- Masukkan baris ini di dalam tag <head>, ganti KODE_SITE_KEY_ANDA dengan Site Key dari Google -->
+    <script src="https://www.google.com/recaptcha/api.js?render=6LeOqSwtAAAAAJnsBJ3_295fvxopeucGPE51m2V7"></script>
 </head>
 <body>
     <div class="glass-container">
@@ -15,6 +17,7 @@
         </div>
 
         <form id="pendaftaranForm">
+            <input type="text" name="website_url" id="website_url" style="display:none" tabindex="-1" autocomplete="off">
             <div class="form-group">
                 <label for="Kategori Peserta">Kategori Peserta</label>
                 <select id="kategori" name="Kategori Peserta" required>
